@@ -19,12 +19,10 @@ public class MatrixCheckTest {
     @Test
     public void whenHasNoMonoHorizontal() {
         char[][] input = {
-                {'X', 'X', 'X'},
-                {' ', ' ', ' '},
-                {' ', ' ', ' '},
-                {'X', 'X', ' '},
-                {' ', ' ', ' '},
-                {' ', ' ', ' '},
+                {'X', 'X', 'X', 'X'},
+                {' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' '},
+                {'X', 'X', 'X', ' '},
         };
         int row = 3;
         boolean result = MatrixCheck.monoHorizontal(input, row);
