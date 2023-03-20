@@ -2,23 +2,28 @@ package ru.job4j.condition;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.offset;
 
 public class TriangleTest {
     @Test
-    public void whenExist() {
-        double ab = 2.0;
-        double ac = 2.0;
-        double bc = 2.0;
-        boolean result = Triangle.exist(ab, ac, bc);
-        assertThat(result).isTrue();
+    public void when00and40and04Then8() {
+        Point a = new Point(0, 0);
+        Point b = new Point(4, 0);
+        Point c = new Point(0, 4);
+        Triangle triangle = new Triangle(a, b, c);
+        double rsl = triangle.area();
+        double expected = 8;
+        assertThat(rsl).isCloseTo(expected, offset(0.001));
     }
 
     @Test
-    public void whenNotExist() {
-        double ab = 6;
-        double ac = 2.5;
-        double bc = 2.5;
-        boolean result = Triangle.exist(ab, ac, bc);
-        assertThat(result).isFalse();
+    public void when22and40and04ThenMinus1() {
+        Point a = new Point(2, 2);
+        Point b = new Point(4, 0);
+        Point c = new Point(0, 4);
+        Triangle triangle = new Triangle(a, b, c);
+        double rsl = triangle.area();
+        double expected = -1;
+        assertThat(rsl).isCloseTo(expected, offset(0.001));
     }
 }
