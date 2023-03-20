@@ -28,4 +28,28 @@ public class PointTest {
         Point two = new Point(2, 0);
         Assert.assertEquals(expected, one.distance(two), 0.01);
     }
+
+    @Test
+    public void when000to202then2dot82() {
+        double expected = 2.82;
+        Point one = new Point(0, 0, 0);
+        Point two = new Point(2, 0, 2);
+        Assert.assertEquals(expected, one.distance3d(two), 0.01);
+    }
+
+    @Test
+    public void when007to253then6dot71() {
+        double expected = 6.71;
+        Point one = new Point(0, 0, 7);
+        Point two = new Point(2, 5, 3);
+        Assert.assertEquals(expected, one.distance3d(two), 0.01);
+    }
+
+    @Test
+    public void when741to209then10dot25() {
+        double expected = 10.25;
+        Point one = new Point(7, 4, 1);
+        Point two = new Point(2, 0, 9);
+        Assert.assertEquals(expected, one.distance3d(two), 0.01);
+    }
 }
